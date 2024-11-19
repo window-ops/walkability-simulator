@@ -1,3 +1,3 @@
-# Walkablity Simulator
+# Walkablity Simulation
 
 This simulation allows you to explore the impact of various urban planning measures on walkability (how easy it is to walk), car flow (how many cars there are), livability (how much life there can be), and distance traveled for essential services (physical distance between where people live and where people work, shop, hang out, etc.) over a 10-year period. Adjust the measures and observe how they influence the urban environment. While in real life the varibles are interconnected, for the purposes of this simulation, they are mutually exclusive. This simulation may not be realistic.

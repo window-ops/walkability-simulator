@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkability Simulation</title>
+    <link rel="stylesheet" href="default.css">
+    <script src="chart.js"></script>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid d-flex justify-content-center">
+        <h3 class="my-0 text-center">City Walkability Simulation</h3>
+      </div>
+    </header>
+    <div class="container-fluid pt-3">
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text">This simulation allows you to explore the impact of various urban planning measures on walkability (how easy it is to walk), car flow (how many cars there are), livability (how much life there can be), and distance traveled for essential services (physical distance between where people live and where people work, shop, hang out, etc.) over a 10-year period. Adjust the measures and observe how they influence the urban environment. While in real life the varibles are interconnected, for the purposes of this simulation, they are mutually exclusive. This simulation may not be realistic.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">Transportation Measures</div>
+            <div class="card-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="bicyclePaths" id="bicyclePaths">
+                <label class="form-check-label" for="bicyclePaths">Add Bicycle Paths</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="metroStations" id="metroStations">
+                <label class="form-check-label" for="metroStations">Add Metro/Train Stations</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="publicTransitImprovements" id="publicTransitImprovements">
+                <label class="form-check-label" for="publicTransitImprovements">Improve Existing Public Transit Services</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="trafficCalming" id="trafficCalming">
+                <label class="form-check-label" for="trafficCalming">Implement Traffic Calming</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="carSharePrograms" id="carSharePrograms">
+                <label class="form-check-label" for="carSharePrograms">Implement Car Share Programs</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="trafficSignalOptimization" id="trafficSignalOptimization">
+                <label class="form-check-label" for="trafficSignalOptimization">Optimize Traffic Signals</label>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">Urban Design Measures</h5></div>
+            <div class="card-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="mixedUseDevelopment" id="mixedUseDevelopment">
+                <label class="form-check-label" for="mixedUseDevelopment">Promote Mixed-Use Development</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="urbanGreenSpaces" id="urbanGreenSpaces">
+                <label class="form-check-label" for="urbanGreenSpaces">Create Urban Green Spaces</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="pedestrianZones" id="pedestrianZones">
+                <label class="form-check-label" for="pedestrianZones">Establish Pedestrian-Only Zones</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="publicArtInitiatives" id="publicArtInitiatives">
+                <label class="form-check-label" for="publicArtInitiatives">Support Public Art Initiatives</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="communitySpaces" id="communitySpaces">
+                <label class="form-check-label" for="communitySpaces">Create Community Gathering Spaces</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-header">Infrastructure Measures</div>
+            <div class="card-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="intersectionRetrofitting" id="intersectionRetrofitting">
+                <label class="form-check-label" for="intersectionRetrofitting">Retrofit Intersections (independent lights, people first)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="sidewalkImprovements" id="sidewalkImprovements">
+                <label class="form-check-label" for="sidewalkImprovements">Improve Sidewalks</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="treePlanting" id="treePlanting">
+                <label class="form-check-label" for="treePlanting">Tree Planting</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="roadNarrowing" id="roadNarrowing">
+                <label class="form-check-label" for="roadNarrowing">Road Narrowing</label>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">Distance Measures</div>
+            <div class="card-body">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="increaseLocalAmenities" id="increaseLocalAmenities">
+                <label class="form-check-label" for="increaseLocalAmenities">Increase Local Amenities</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="improveDirectRoutes" id="improveDirectRoutes">
+                <label class="form-check-label" for="improveDirectRoutes">Improve Direct Routes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="increaseDensity" id="increaseDensity">
+                <label class="form-check-label" for="increaseDensity">Increase Density</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="enhanceAccessibility" id="enhanceAccessibility">
+                <label class="form-check-label" for="enhanceAccessibility">Enhance Accessibility</label>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">Implementation Options</div>
+            <div class="card-body">
+              <div class="form-group mb-0">
+                <label for="weight">Implementation Weight (1-5):</label>
+                <input type="range" class="form-control-range" id="weight" min="1" max="5" value="1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">Simulation Graph</div>
+        <div class="card-body">
+          <canvas id="walkabilityChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
